@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Click-to-Reveal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #fce4ec;
+      color: #880e4f;
+    }
+    #container {
+      margin-top: 50px;
+    }
+    img {
+      max-width: 300px;
+      border-radius: 10px;
+      margin: 20px 0;
+      transition: opacity 0.5s ease;
+    }
+    #message {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #ad1457;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #d81b60;
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Click to Reveal 💖</h1>
+  <div id="container">
+    <img id="image" src="" alt="Surprise" style="opacity:0;">
+    <p id="message"></p>
+    <button onclick="showRandom()">Reveal Next</button>
+  </div>
+
+  <script>
+    const surprises = [
+      { image: "images/13.jpeg", message: "With God all these are able to be done beautiful" },
+      { image: "images/12.jpeg", message: "The way you feel like no one cares just makes me want to love you more, daddy is here always" },
+      { image: "images/14.jpeg", message: "these flowers are all for you, the world still has more for you to see. Never worry " },
+      { image: "images/2.jpeg", message: "I am your man cause i want to, i love and cherish you beautiful, never feel like you need more you are enough for me, and i like you that way😊" },
+      { image: "images/3.jpeg", message: "I wont lie but in this time i dont know if i had any thing for you but look where we are now" },
+      { image: "images/1.jpeg", message: "We are all hard to love you above all people should know that but we are in this together, i respect each decision you set for us" },
+      { image: "images/8.jpeg", message: "i will play with you for all your time but all i ask is that you stay as my baby dont grow so fast, let me continue to listen to you, you are worth my ears and thoughts" },
+      { image: "images/4.jpeg", message: "So kikazi, your man will always be here for you through all times so dont worry✌️😉😊, so if you need more daddy is here for all your needs and cormfort" }
+    ];
+
+    function showRandom() {
+      const randomIndex = Math.floor(Math.random() * surprises.length);
+      const surprise = surprises[randomIndex];
+      
+      const img = document.getElementById("image");
+      const msg = document.getElementById("message");
+
+      img.style.opacity = 0; // fade out
+      setTimeout(() => {
+        img.src = surprise.image;
+        msg.textContent = surprise.message;
+        img.style.opacity = 1; // fade in
+      }, 300);
+    }
+  </script>
+</body>
+</html>

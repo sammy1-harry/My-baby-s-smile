@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine Surprise</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #ffe6e6;
+      color: #333;
+    }
+    img {
+      max-width: 300px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .yes {
+      background-color: #ff4d4d;
+      color: white;
+    }
+    .no {
+      background-color: #999;
+      color: white;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #660000;
+    }
+  </style>
+</head>
+<body>
+  <h1>Will you be my Valentine?</h1>
+  
+  <!-- Replace 'yourphoto.jpg' with your actual photo file -->
+  <img src="C:\Users\DELL\OneDrive\Desktop\2 that made 1.jpeg" alt="Us together">
+  
+  <div>
+    <button class="yes" onclick="showMessage('yes')">Yes</button>
+    <button class="no" onclick="showMessage('no')">No</button>
+  </div>
+  
+  <div id="message"></div>
+  
+  <script>
+    function showMessage(answer) {
+      let msg = "";
+      if (answer === "yes") {
+        msg = "I am so sorry for being a fool, not asking everything you want, not knowing you too well, not being enough and just being me a jerk. I have made you so pissed but please, angel of mine, I am so sorry. I love you. ";
+      } else {
+        msg = "I am so sorry that I messed up so bad and I ask that you can find a place in your heart to forgive me. I am so stupid not to appreciate you, not to ask you out earlier, but I am so sorry. You have every right to do so and you are right, but I am so sorry baby, so sorry. I love you so much. Will you please be my valentine?";
+      }
+      document.getElementById("message").innerText = msg;
+    }
+  </script>
+</body>
+</html>
